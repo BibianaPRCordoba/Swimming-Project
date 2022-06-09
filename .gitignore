@@ -1,0 +1,4 @@
+/application/cache/*
+/config/config.php
+/config/database.php
+/config/logs/*
