@@ -55,11 +55,18 @@ SELECT * FROM sesiones_activas;
 -- !!! 
 -- COMMENT ALL THE LINES OF THIS SECTION
 -- !!!
+
 #DROP TABLE usuarios;
 #DROP TABLE sesiones_activas;
 
 #######################################################################################################################
 
+###################################
+### CREATION OF DATA FOR TABLES ###
+###################################
+
+INSERT INTO usuarios (id_usuario, nombre, apaterno, amaterno, telefono, email, username, password, rol, ocupacion, estado) VALUES
+(1, 'Admin', 'Admin', 'Admin', '4425879634', 'admin@admin.com', 'admin', '1234', 'SU', 'Super Usuario', 1);
 
 #######################################################################################################################
 
