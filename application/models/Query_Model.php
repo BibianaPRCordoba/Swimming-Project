@@ -14,10 +14,12 @@ class Query_Model extends CI_Model{
 
 /* START - CONTROLLER: Dashboard */
 
-function InsertUsuario($datosusuario){
 
-  $this->db->insert('usuarios', $datosusuario);
-
+function DatosHorario(){
+	$this->db->select('*');
+	$this->db->from('horarios');
+	$query = $this->db->get();
+    return $query->result();
 }
 
 /* END - CONTROLLER: Dashboard */
