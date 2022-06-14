@@ -141,59 +141,56 @@ class Query_Model extends CI_Model{
         $this->db->update('usuarios',$datos_maestro_usuarios);
     }
 
-<<<<<<< HEAD
-
 function DatosHorario(){
 	$this->db->select('*');
 	$this->db->from('horarios');
 	$query = $this->db->get();
     return $query->result();
 }
-=======
-    function DeleteMaestroTbMaestros($id){        
-        $this->db->where('id_maestro', $id);
-        $this->db->delete('maestros');
-    }
 
-    function DeleteMaestroTbUsuarios($id){        
-        $this->db->where('id_maestro', $id);
-        $this->db->delete('usuarios');
-    }
+function DeleteMaestroTbMaestros($id){        
+    $this->db->where('id_maestro', $id);
+    $this->db->delete('maestros');
+}
 
-    function DataMaestros(){
-        $this->db->select('*');
-        $this->db->from('maestros');
-        $query = $this->db->get();
-        return $query->result();
-    }
->>>>>>> master
+function DeleteMaestroTbUsuarios($id){        
+    $this->db->where('id_maestro', $id);
+    $this->db->delete('usuarios');
+}
 
-    function GetMaestroById($id){
-        $query = $this->db->query("SELECT m.id_maestro, m.nombre, m.apaterno, m.amaterno, m.telefono, m.direccion, 
-            u.email, u.username, u.password, u.role, u.estado
-            FROM maestros AS m
-            INNER JOIN usuarios AS u ON u.nombre = m.nombre AND u.apaterno = m.apaterno AND u.amaterno = m.amaterno
-            WHERE m.id_maestro = '$id'"
-        );
-        return $query->result();
-    }
+function DataMaestros(){
+    $this->db->select('*');
+    $this->db->from('maestros');
+    $query = $this->db->get();
+    return $query->result();
+}
 
-    function InsertIdMaestroIntoTbUsuarios($id,$datos_maestro_usuarios){
-        $query = $this->db->query("UPDATE usuarios
-        JOIN maestros
-        ON usuarios.nombre = maestros.nombre
-        AND usuarios.apaterno = maestros.apaterno
-        AND usuarios.amaterno = maestros.amaterno
-        SET usuarios.id_maestro = maestros.id_maestro");
-    }
+function GetMaestroById($id){
+    $query = $this->db->query("SELECT m.id_maestro, m.nombre, m.apaterno, m.amaterno, m.telefono, m.direccion, 
+        u.email, u.username, u.password, u.role, u.estado
+        FROM maestros AS m
+        INNER JOIN usuarios AS u ON u.nombre = m.nombre AND u.apaterno = m.apaterno AND u.amaterno = m.amaterno
+        WHERE m.id_maestro = '$id'"
+    );
+    return $query->result();
+}
 
-    function GetMaestroByUsername($usuario){
-        $this->db->select('*');
-        $this->db->from('usuarios');
-        $this->db->where('username', $usuario);
-        $query = $this->db->get();
-        return $query->result();
-    }
+function InsertIdMaestroIntoTbUsuarios($id,$datos_maestro_usuarios){
+    $query = $this->db->query("UPDATE usuarios
+    JOIN maestros
+    ON usuarios.nombre = maestros.nombre
+    AND usuarios.apaterno = maestros.apaterno
+    AND usuarios.amaterno = maestros.amaterno
+    SET usuarios.id_maestro = maestros.id_maestro");
+}
+
+function GetMaestroByUsername($usuario){
+    $this->db->select('*');
+    $this->db->from('usuarios');
+    $this->db->where('username', $usuario);
+    $query = $this->db->get();
+    return $query->result();
+}
 
 /* END - CONTROLLER: Maestros */
 /* =============================================================================================================================================================================================================================== */
