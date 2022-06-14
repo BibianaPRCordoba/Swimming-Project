@@ -102,6 +102,8 @@ CREATE TABLE `horarios` (
   `fecha_operacion` date DEFAULT NULL,
   `numero_anio` int(11) DEFAULT NULL,
   `estado` enum('1','0') DEFAULT '1',
+	`id_nino` INT NOT NULL,
+    FOREIGN KEY (`id_nino`) REFERENCES ninos(id_nino),
   PRIMARY KEY (`id_horario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
