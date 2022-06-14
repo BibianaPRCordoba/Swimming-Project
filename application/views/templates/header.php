@@ -11,13 +11,13 @@
 </script>
 
 <body class="fixed-left"  >
-    <div class="bg-img-main"></div>
+    {% comment %} <div class="bg-img-main"></div> {% endcomment %}
     <div id="wrapper"><!-- Begin page -->
         <div class="topbar"><!-- Top Bar Start -->
             <div class="topbar-left" ><!-- LOGO -->
                         <div class="text-center">
                             
-                            <a href="#" class="logo"><img src="<?php echo base_url('assets/myapp/img/.jpg'); ?>" alt="user-img" class="img-circle" height="65px"></a>
+                            <a href="#" class="logo"><img src="<?php echo base_url('assets/myapp/img/.jpg'); ?>" alt="Logo" class="img-circle" height="65px"></a>
                             
                         </div>
                     </div>
@@ -26,7 +26,7 @@
             <div class="navbar navbar-default" role="navigation"><!-- Button mobile view to collapse sidebar menu -->
                 <div class="container">
                     <!--div class=""-->
-                    <div class="pull-left">
+                    <div class="pull-left"> <!-- Boton Minimizar Menu -->
                         <button class="button-menu-mobile open-left">
                             <i class="ion-navicon"></i>
                         </button>

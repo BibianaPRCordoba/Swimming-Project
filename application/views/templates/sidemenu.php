@@ -9,17 +9,17 @@
 
                 switch(roles) {
 
-                    case 'SU':
+                    case 'Padre':
 
                         break;
                         
-                    case 'A':
+                    case 'Maestro':
 
                         
                     
                         break;
 
-                    case 'E':
+                    case 'Nino':
 
                     break;
                         
@@ -37,8 +37,16 @@
                         <ul id="todo">
                             <li class="text-muted menu-title" style="color:black;">Menu</li>
 
-                            <li class="has_sub" id="home">
-                                <a href="<?= base_url('index.php/Dashboard/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Inicio</span> </a>
+                            <li class="has_sub" id="padres">
+                                <a href="<?= base_url('index.php/Padres/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Padres</span> </a>
+                            </li>
+
+                            <li class="has_sub" id="alumnos">
+                                <a href="<?= base_url('index.php/Alumnos/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Alumnos</span> </a>
+                            </li>
+
+                            <li class="has_sub" id="maestros">
+                                <a href="<?= base_url('index.php/Maestros/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Maestros</span> </a>
                             </li>
 
                         </ul>

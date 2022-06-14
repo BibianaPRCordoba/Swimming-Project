@@ -69,7 +69,7 @@
 
                               <div class="panel-body">
                                 <h1>
-                                  Bienvenido a nuestras clases de natación!
+                                  ¡Bienvenido a nuestras clases de natación de nadando ando!
                                 </h1>
 
                                 <!-- Features -->                        
@@ -78,10 +78,10 @@
                                   <div class="card-box">
                                     <div class="box-body">
                                       <h3 class="feature-title">
-                                        Horario flexible
+                                        ¿Cómo trabajamos? 
                                       </h3>
                                       <p class="feature-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis pellentesque urna, et bibendum mi euismod eget. Phasellus tincidunt in libero at suscipit. Nam sagittis, neque porta consequat tristique, turpis arcu feugiat risus, at commodo nisl risus quis ligula. In sodales placerat est, vel dignissim nisl luctus nec. Nullam vel vulputate magna. Vivamus vitae semper enim. Vestibulum quis scelerisque enim. Vivamus nisi ligula, imperdiet at ultricies ac, varius faucibus sem. In id tincidunt erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam arcu neque, posuere in venenatis ut, rutrum ac arcu. Praesent lectus nisl, pellentesque ac finibus non, rhoncus non mi. In lectus turpis, blandit mattis orci vitae, vulputate elementum enim. Curabitur vehicula egestas facilisis. Praesent ut luctus purus.
+                                        Con más de 20 años de experiencia, en Nadando Ando, ofrecemos clases personalizadas, de grupo, matro-natación y más. 
                                       </p>
                                     </div>
                                   </div>
@@ -92,7 +92,7 @@
                                         Maestros certificados
                                       </h3>
                                       <p class="feature-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis pellentesque urna, et bibendum mi euismod eget. Phasellus tincidunt in libero at suscipit. Nam sagittis, neque porta consequat tristique, turpis arcu feugiat risus, at commodo nisl risus quis ligula. In sodales placerat est, vel dignissim nisl luctus nec. Nullam vel vulputate magna. Vivamus vitae semper enim. Vestibulum quis scelerisque enim. Vivamus nisi ligula, imperdiet at ultricies ac, varius faucibus sem. In id tincidunt erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam arcu neque, posuere in venenatis ut, rutrum ac arcu. Praesent lectus nisl, pellentesque ac finibus non, rhoncus non mi. In lectus turpis, blandit mattis orci vitae, vulputate elementum enim. Curabitur vehicula egestas facilisis. Praesent ut luctus purus.
+                                       Contamos con maestros certificados en la enseñanza, al igual que en primeros auxilios. 
                                       </p>
                                     </div>
                                   </div>
@@ -100,10 +100,19 @@
                                   <div class="card-box">
                                     <div class="box-body">
                                       <h3 class="feature-title">
-                                        Seguridad
+                                        Sobre las clases...
                                       </h3>
+                                      <h2>Matro-natación:</h2>
                                       <p class="feature-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis pellentesque urna, et bibendum mi euismod eget. Phasellus tincidunt in libero at suscipit. Nam sagittis, neque porta consequat tristique, turpis arcu feugiat risus, at commodo nisl risus quis ligula. In sodales placerat est, vel dignissim nisl luctus nec. Nullam vel vulputate magna. Vivamus vitae semper enim. Vestibulum quis scelerisque enim. Vivamus nisi ligula, imperdiet at ultricies ac, varius faucibus sem. In id tincidunt erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam arcu neque, posuere in venenatis ut, rutrum ac arcu. Praesent lectus nisl, pellentesque ac finibus non, rhoncus non mi. In lectus turpis, blandit mattis orci vitae, vulputate elementum enim. Curabitur vehicula egestas facilisis. Praesent ut luctus purus.
+                                        La matronatación es ideal para los bebés de 6 a 36 meses debido a que su sistema inmunológico ha madurado y tienen menos riesgos de padecer alguna enfermedades; además este entrenamiento permite la estimulación acuática mediante juegos para que puedan aprender a flotar y moverse por el agua, es importante que los padres siempre se encuentren presentes y puedan ayudar a sus hijos.
+                                      </p>
+                                      <h2>Personalizado:</h2>
+                                      <p class="feature-text">
+                                        Las natación es capaz de mejorar la coordinación y equilibrio de los niños, pero no es sino hasta que el aparato locomotor se encuentra los suficientemente desarrollado cuando pueden comenzar las clases de natación para niños; mientras son bebés lo principal es que aprendan a adaptarse al agua, pero cuando empiezan a poder controlar sus movimientos pueden aprender las técnicas adecuadas de natación. Por lo regular las edades de los niños abarcan desde los 3 hasta los 6 años
+                                      </p>
+                                      <h2>Grupo:</h2>
+                                      <p class="feature-text">
+                                        Las natación para una competencia requiere de un entrenamiento constante que desarrolle la fuerza y la velocidad; ya sea para un triatlón de atletas infantiles, juveniles o másteres, se requiere de un entrenador profesional que brinde una rutina de ejercicios que sean variados y de gran intensidad. El entrenador será el encargado de supervisar los resultados obtenidos para cambiar o mejorar las rutinas y alcanzar los objetivos del equipo.
                                       </p>
                                     </div>
                                   </div>

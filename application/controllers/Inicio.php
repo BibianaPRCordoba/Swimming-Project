@@ -8,6 +8,6 @@ class Inicio extends CI_Controller{
     }
 
     public function index(){    
-    $this->load->view("dashboard/init");    
+    $this->load->view("padres/init");    
    	}
 }
