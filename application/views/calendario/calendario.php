@@ -53,32 +53,34 @@
           <!-- Page-Title -->
           <div class="row">
             <div class="col-sm-12">
-              <h4 class="page-title">HORARIOS</h4>
+              <h4 class="page-title">FICHA INFORMATIVA PARA PADRES DE FAMILIA</h4>
             </div>
           </div>
 
           <br>
 
-          <div class="col-lg-4">
+          <div class="col-lg-12">
             <div class="panel panel-border panel-info">
               <div class="panel-heading">
-                <h3 class="panel-title">HORARIO DEL ALUMNO: </h3>
+                <?php foreach($calendarios as $cal):?>
+                  <h3 class="panel-title text-center">FICHA DEL ALUMNO:<?=$cal->nombre.' '.$cal->apaterno.' '.$cal->amaterno?></h3>
+                <?php endforeach;?>
               </div>
               <div class="panel-body">
                 <!-- form start -->
-                <div class="card" style="width: 18rem;">
-                  <img src="..." class="card-img-top" alt="...">
+                <div class="card" style="width: 24rem;">
+                 <!--  <img src="..." class="card-img-top" alt="..."> -->
                   <div class="card-body">
-                    <div class="card-text">
-                      <?php foreach($calendarios as $cal):?>
+                    <?php foreach($calendarios as $cal):?>
                       <tr>
-                          <td><?=$cal->nombre_usuario.' '.$user->apellidos_usuario?></td>
-                          <td><?=$cal->correo_usuario?></td>
-                          <td><img src="<?=base_url('archivos/'.$cal->imagen);?>" class="thumbnail" Width="150" height="100" alt=""></td>
-                          
+                       <div class="d-flex w-100 justify-content-between">
+                          <h3 class="panel-title">Edad: <?=$cal->edad?> </h3>
+                          <h3 class="panel-title">Maestro encargado: <?=$cal->maestro?> </h3>
+                          <h3 class="panel-title">Horario de clases: <?=$cal->horario?> </h3>
+                        </div>
+                        <td><img src="https://www.google.com/search?q=ariana+grande&rlz=1C1ONGR_esMX1005MX1005&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjpqvHjnq34AhVhDEQIHQ7QCFEQ_AUoAXoECAIQAw&biw=1366&bih=663&dpr=1#imgrc=6lILwVRGJcyRGM" class="thumbnail" Width="150" height="100" alt=""></td> 
                       </tr>
-                  <?php endforeach;?>
-                    </div>
+                    <?php endforeach;?>
                   </div>
                 </div>
                
@@ -104,3 +106,4 @@
 
 </body>
 </html>
+<!-- <?=base_url('archivos/'.$cal->imagen);?> -->
