@@ -36,7 +36,9 @@
                     <div id="sidebar-menu" >
                         <ul id="todo">
                             <li class="text-muted menu-title" style="color:black;">Menu</li>
-
+                            <li class="has_sub" id="padres">
+                                <a href="<?= base_url('index.php/Dashboard/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Dashboard</span> </a>
+                            </li>
                             <li class="has_sub" id="padres">
                                 <a href="<?= base_url('index.php/Padres/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Padres</span> </a>
                             </li>
@@ -47,6 +49,9 @@
 
                             <li class="has_sub" id="maestros">
                                 <a href="<?= base_url('index.php/Maestros/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Maestros</span> </a>
+                            </li>
+                            <li class="has_sub" id="padres">
+                                <a href="<?= base_url('index.php/Calendario/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Calendario</span> </a>
                             </li>
 
                         </ul>
