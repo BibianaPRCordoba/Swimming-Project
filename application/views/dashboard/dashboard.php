@@ -67,10 +67,71 @@
                                 <h3 class="panel-title">Bienvenido!</h3>
                               </div>
 
+                              <!-- Jumbotron -->
                               <div class="panel-body">
-                                <h1>
-                                  ¡Bienvenido a nuestras clases de natación de nadando ando!
-                                </h1>
+                                <div class="jumbotron" style="
+                                background-image: url('<?= base_url() ?>/assets/myapp/img/dashboard/Natacion.jpg');
+                                background-position: center;
+                                color: white;
+                                text-shadow: 2px 2px black;
+                                ">
+                                  <h1>Bienvenidos a nuestras clases de natacion</h1>
+                                  <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat neque fermentum enim sollicitudin finibus. Integer tincidunt sed felis in aliquet. Ut at ullamcorper risus. Aliquam consectetur felis nec ullamcorper malesuada. Nunc dictum ornare arcu in bibendum. Integer pharetra imperdiet ex sed volutpat. Vestibulum efficitur magna nibh, ut semper arcu euismod eget. Nulla id ante arcu. Donec faucibus tempor odio a ullamcorper. Suspendisse rhoncus magna efficitur ligula eleifend, nec accumsan velit laoreet. Praesent tempus felis in vulputate egestas. Suspendisse finibus sagittis massa, ac tristique ipsum elementum non. Proin convallis venenatis varius.
+                                  </p>
+                                  <p><a class="btn btn-primary btn-lg" href="#footer" role="button">Sobre nosotros</a></p>
+                                </div>
+
+                                <!-- Features --> 
+                                <section id="features">
+                                  <div class="media" style="padding: 1.25rem; font-size: 24px;">
+                                    <div class="media-left">
+                                      <a href="#">
+                                        <img class="media-object" src="<?= base_url() ?>/assets/myapp/img/800.png" style="height: 350px;" alt="...">
+                                      </a>
+                                    </div>
+                                    <div class="media-body">
+                                      <h4 class="media-heading" style="font-size: 32px; padding: 1.25rem;">Media heading</h4>
+                                      <p style="
+                                      text-align: left;
+                                      margin-left: 10px;">
+                                        orem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat neque fermentum enim sollicitudin finibus. Integer tincidunt sed felis in aliquet. Ut at ullamcorper risus.
+                                      </p>
+                                    </div>
+                                  </div>
+
+                                  <div class="media" style="padding: 1.25rem; font-size: 24px;">
+                                    <div class="media-left">
+                                      <a href="#">
+                                        <img class="media-object" src="<?= base_url() ?>/assets/myapp/img/800.png" style="height: 350px;" alt="...">
+                                      </a>
+                                    </div>
+                                    <div class="media-body">
+                                      <h4 class="media-heading" style="font-size: 32px; padding: 1.25rem;">Media heading</h4>
+                                      <p style="
+                                      text-align: left;
+                                      margin-left: 10px;">
+                                        orem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat neque fermentum enim sollicitudin finibus. Integer tincidunt sed felis in aliquet. Ut at ullamcorper risus.
+                                      </p>
+                                    </div>
+                                  </div>
+
+                                  <div class="media" style="padding: 1.25rem; font-size: 24px;">
+                                    <div class="media-left">
+                                      <a href="#">
+                                        <img class="media-object" src="<?= base_url() ?>/assets/myapp/img/800.png" style="height: 350px;" alt="...">
+                                      </a>
+                                    </div>
+                                    <div class="media-body">
+                                      <h4 class="media-heading" style="font-size: 32px; padding: 1.25rem;">Media heading</h4>
+                                      <p style="
+                                      text-align: left;
+                                      margin-left: 10px;">
+                                        orem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat neque fermentum enim sollicitudin finibus. Integer tincidunt sed felis in aliquet. Ut at ullamcorper risus.
+                                      </p>
+                                    </div>
+                                  </div>
+                                </section>
 
                                 <!-- Features -->                        
                                 <section id="features">
@@ -118,6 +179,7 @@
                                   </div>
                                 </section>
 
+                                <!-- Video -->
                                 <div class="column">
                                   <section class="video-section">
                                     <h2 id="video-title">
@@ -138,7 +200,20 @@
                                     </div>
                                   </section>
                                 </div>
-                                <!-- Video -->
+
+                                <!-- Footer1 -->
+                                <section id="footer">
+                                  <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                      <h3 class="panel-title">Sobre nosotros</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                      Panel content
+                                    </div>
+                                  </div>
+                                </section>
+                                
+                                
                                 
 
                               </div>
