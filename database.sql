@@ -1,4 +1,4 @@
-CREATE DATABASE proyecto_natacion;
+#CREATE DATABASE proyecto_natacion;
 USE proyecto_natacion;
 
 #horarios
@@ -142,7 +142,7 @@ SELECT * FROM padres;
 
 # USUARIOS
 INSERT INTO `usuarios` VALUES
-(1,1,0,'Pepes','Pepe','Pepe','pepe@gmail.com','pepe','1234','Padre',1),
+(2,1,0,'Pepes','Pepe','Pepe','pepe@gmail.com','pepe','1234','Padre',1),
 (3,0,0,'Ninguno',' ',' ',' ','','','',0),
 (4,0,1,'Maestros','Maestro','Maestro','maestro@gmail.com','Maestro','1234','Maestro',1),
 (7,5,0,'ddd','ddd','ddd','ddd','dd','dd','Padre',1);

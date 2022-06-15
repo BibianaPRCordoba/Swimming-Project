@@ -63,22 +63,30 @@
             <div class="panel panel-border panel-info">
               <div class="panel-heading">
                 <?php foreach($calendarios as $cal):?>
-                  <h3 class="panel-title text-center">FICHA DEL ALUMNO:<?=$cal->nombre.' '.$cal->apaterno.' '.$cal->amaterno?></h3>
+                  <h3 class="panel-title text-center">FICHA DEL ALUMNO: <?=$cal->nombre_nino.' '.$cal->apaterno_nino.' '.$cal->amaterno_nino?></h3>
                 <?php endforeach;?>
               </div>
               <div class="panel-body">
+
+
                 <!-- form start -->
+                <?php foreach($calendarios as $cal):?>
                 <div class="card" style="width: 24rem;">
-                 <!--  <img src="..." class="card-img-top" alt="..."> -->
                   <div class="card-body">
-                    <?php foreach($calendarios as $cal):?>
                       <tr>
                        <div class="d-flex w-100 justify-content-between">
-                          <h3 class="panel-title">Edad: <?=$cal->edad?> </h3>
-                          <h3 class="panel-title">Maestro encargado: <?=$cal->maestro?> </h3>
-                          <h3 class="panel-title">Horario de clases: <?=$cal->horario?> </h3>
+                          <h3 class="panel-title">Nivel: <?=$cal->nivel?> </h3>
+                          <h3 class="panel-title">Telefono de emergencia: <?=$cal->tel_emergencia?> </h3>
+                            <?php if($cal->nivel == '1') { ?>
+                                <h3 class="panel-title">Horario de clases: 9am-10am</h3>
+                            <?php } ?>
+                            <?php if(@$cal->nivel == '2') { ?>
+                                <h3 class="panel-title">Horario de clases: 11am-12pm</h3>
+                            <?php } ?>
+                            <?php if(@$cal->nivel == '3') { ?>
+                                <h3 class="panel-title">Horario de clases: 1pm-2pm</h3>
+                            <?php } ?>
                         </div>
-                        <td><img src="https://www.google.com/search?q=ariana+grande&rlz=1C1ONGR_esMX1005MX1005&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjpqvHjnq34AhVhDEQIHQ7QCFEQ_AUoAXoECAIQAw&biw=1366&bih=663&dpr=1#imgrc=6lILwVRGJcyRGM" class="thumbnail" Width="150" height="100" alt=""></td> 
                       </tr>
                     <?php endforeach;?>
                   </div>
@@ -106,4 +114,4 @@
 
 </body>
 </html>
-<!-- <?=base_url('archivos/'.$cal->imagen);?> -->
+<!--  -->

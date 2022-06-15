@@ -141,94 +141,99 @@ class Query_Model extends CI_Model{
         $this->db->update('usuarios',$datos_maestro_usuarios);
     }
 
-function DatosHorario(){
-	$this->db->select('*');
-	$this->db->from('horarios');
-	$query = $this->db->get();
-    return $query->result();
-}
+	function DeleteMaestroTbMaestros($id){        
+	    $this->db->where('id_maestro', $id);
+	    $this->db->delete('maestros');
+	}
 
-function DeleteMaestroTbMaestros($id){        
-    $this->db->where('id_maestro', $id);
-    $this->db->delete('maestros');
-}
+	function DeleteMaestroTbUsuarios($id){        
+	    $this->db->where('id_maestro', $id);
+	    $this->db->delete('usuarios');
+	}
 
-function DeleteMaestroTbUsuarios($id){        
-    $this->db->where('id_maestro', $id);
-    $this->db->delete('usuarios');
-}
+	function DataMaestros(){
+	    $this->db->select('*');
+	    $this->db->from('maestros');
+	    $query = $this->db->get();
+	    return $query->result();
+	}
 
-function DataMaestros(){
-    $this->db->select('*');
-    $this->db->from('maestros');
-    $query = $this->db->get();
-    return $query->result();
-}
+	function GetMaestroById($id){
+	    $query = $this->db->query("SELECT m.id_maestro, m.nombre, m.apaterno, m.amaterno, m.telefono, m.direccion, 
+	        u.email, u.username, u.password, u.role, u.estado
+	        FROM maestros AS m
+	        INNER JOIN usuarios AS u ON u.nombre = m.nombre AND u.apaterno = m.apaterno AND u.amaterno = m.amaterno
+	        WHERE m.id_maestro = '$id'"
+	    );
+	    return $query->result();
+	}
 
-function GetMaestroById($id){
-    $query = $this->db->query("SELECT m.id_maestro, m.nombre, m.apaterno, m.amaterno, m.telefono, m.direccion, 
-        u.email, u.username, u.password, u.role, u.estado
-        FROM maestros AS m
-        INNER JOIN usuarios AS u ON u.nombre = m.nombre AND u.apaterno = m.apaterno AND u.amaterno = m.amaterno
-        WHERE m.id_maestro = '$id'"
-    );
-    return $query->result();
-}
+	function InsertIdMaestroIntoTbUsuarios($id,$datos_maestro_usuarios){
+	    $query = $this->db->query("UPDATE usuarios
+	    JOIN maestros
+	    ON usuarios.nombre = maestros.nombre
+	    AND usuarios.apaterno = maestros.apaterno
+	    AND usuarios.amaterno = maestros.amaterno
+	    SET usuarios.id_maestro = maestros.id_maestro");
+	}
 
-function InsertIdMaestroIntoTbUsuarios($id,$datos_maestro_usuarios){
-    $query = $this->db->query("UPDATE usuarios
-    JOIN maestros
-    ON usuarios.nombre = maestros.nombre
-    AND usuarios.apaterno = maestros.apaterno
-    AND usuarios.amaterno = maestros.amaterno
-    SET usuarios.id_maestro = maestros.id_maestro");
-}
-
-function GetMaestroByUsername($usuario){
-    $this->db->select('*');
-    $this->db->from('usuarios');
-    $this->db->where('username', $usuario);
-    $query = $this->db->get();
-    return $query->result();
-}
+	function GetMaestroByUsername($usuario){
+	    $this->db->select('*');
+	    $this->db->from('usuarios');
+	    $this->db->where('username', $usuario);
+	    $query = $this->db->get();
+	    return $query->result();
+	}
 
 /* END - CONTROLLER: Maestros */
 /* =============================================================================================================================================================================================================================== */
 
 /* =============================================================================================================================================================================================================================== */
 /* START - CONTROLLER: Nivel 1 */
-function DataNivel1(){
-    $this->db->select('*');
-    $this->db->from('ninos');
-    $this->db->where('nivel','1');
-    $query = $this->db->get();
-    return $query->result();
-}
+	function DataNivel1(){
+	    $this->db->select('*');
+	    $this->db->from('ninos');
+	    $this->db->where('nivel','1');
+	    $query = $this->db->get();
+	    return $query->result();
+	}
 /* END - CONTROLLER: Nivel 1 */
 /* =============================================================================================================================================================================================================================== */
 
 /* =============================================================================================================================================================================================================================== */
 /* START - CONTROLLER: Nivel 2 */
-function DataNivel2(){
-    $this->db->select('*');
-    $this->db->from('ninos');
-    $this->db->where('nivel','2');
-    $query = $this->db->get();
-    return $query->result();
-}
+	function DataNivel2(){
+	    $this->db->select('*');
+	    $this->db->from('ninos');
+	    $this->db->where('nivel','2');
+	    $query = $this->db->get();
+	    return $query->result();
+	}
 /* END - CONTROLLER: Nivel 2 */
 /* =============================================================================================================================================================================================================================== */
 /* =============================================================================================================================================================================================================================== */
 /* START - CONTROLLER: Nivel 3 */
-function DataNivel3(){
-    $this->db->select('*');
-    $this->db->from('ninos');
-    $this->db->where('nivel','3');
-    $query = $this->db->get();
-    return $query->result();
-}
+	function DataNivel3(){
+	    $this->db->select('*');
+	    $this->db->from('ninos');
+	    $this->db->where('nivel','3');
+	    $query = $this->db->get();
+	    return $query->result();
+	}
 /* END - CONTROLLER: Nivel 3 */
 /* =============================================================================================================================================================================================================================== */
+
+	function GetPadreByUser($user){
+        $query = $this->db->query("SELECT p.id_padre, p.nombre, p.apaterno, p.amaterno,
+			u.id_usuario, u.username, u.email,
+			n.nombre_nino, n.apaterno_nino, n.amaterno_nino, n.tel_emergencia, n.nivel, n.id_nino 
+			FROM padres AS p 
+			INNER JOIN ninos AS n ON p.id_padre = n.id_padre
+			INNER JOIN usuarios AS u ON p.id_padre = u.id_padre
+			WHERE u.username = '$user'"
+        );
+        return $query->result();
+    }
 
 
 }
