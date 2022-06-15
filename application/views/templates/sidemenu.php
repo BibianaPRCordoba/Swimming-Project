@@ -50,8 +50,19 @@
                             <li class="has_sub" id="maestros">
                                 <a href="<?= base_url('index.php/Maestros/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Maestros</span> </a>
                             </li>
-                            <li class="has_sub" id="padres">
+                            <li class="has_sub" id="calendario">
                                 <a href="<?= base_url('index.php/Calendario/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Calendario</span> </a>
+                            </li>
+                            <br>
+                            <li class="text-muted menu-title" style="color:black;">Niveles</li>
+                            <li class="has_sub" id="nivel1">
+                                <a href="<?= base_url('index.php/Nivel1/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Nivel 1</span> </a>
+                            </li>
+                            <li class="has_sub" id="nivel2">
+                                <a href="<?= base_url('index.php/Nivel2/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Nivel 2</span> </a>
+                            </li>
+                            <li class="has_sub" id="nivel3">
+                                <a href="<?= base_url('index.php/Nivel3/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Nivel 3</span> </a>
                             </li>
 
                         </ul>

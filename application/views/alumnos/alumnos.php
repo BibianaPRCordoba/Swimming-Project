@@ -137,6 +137,7 @@
                                                 <tr>
                                                     <th>Nombre</th>
                                                     <th>Telefono</th>
+                                                    <th>Nivel</th>
                                                     <th>Editar</th>
                                                     <th>Borrar</th>
                                                 </tr>
@@ -151,6 +152,7 @@
                                                         $apaterno= $res -> apaterno_nino;
                                                         $amaterno = $res -> amaterno_nino;
                                                         $telefono = $res -> tel_emergencia;
+                                                        $nivel = $res -> nivel;
 
                                                         $nombre_completo = $nombre . ' ' .$apaterno. ' ' .$amaterno;
 
@@ -158,6 +160,7 @@
                                                         <tr>
                                                         <td>$nombre_completo</td>
                                                         <td>$telefono</td>
+                                                        <td>$nivel</td>
                                                         ";
 
                                                         echo "<td>";
