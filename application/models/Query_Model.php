@@ -235,5 +235,15 @@ class Query_Model extends CI_Model{
         return $query->result();
     }
 
+    function GetMaestroByUser($user){
+        $query = $this->db->query("SELECT m.id_maestro, m.nombre, m.apaterno, m.amaterno, m.nivel,
+			u.id_usuario, u.username, u.email
+			FROM maestros AS m 
+			INNER JOIN usuarios AS u ON m.id_maestro = u.id_maestro
+			WHERE u.username = '$user'"
+        );
+        return $query->result();
+    }
+
 
 }

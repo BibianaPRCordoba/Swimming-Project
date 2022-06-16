@@ -53,9 +53,9 @@ CREATE TABLE `maestros` (
   `amaterno` varchar(60) NOT NULL,
   `telefono` varchar(10) NOT NULL,
   `direccion` varchar(120) NOT NULL,
+  `nivel` INT NOT NULL,
   PRIMARY KEY (`id_maestro`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 # NINOS
 DROP TABLE IF EXISTS `ninos`;
@@ -148,7 +148,8 @@ INSERT INTO `usuarios` VALUES
 (7,5,0,'ddd','ddd','ddd','ddd','dd','dd','Padre',1);
 
 # MAESTROS
-INSERT INTO `maestros` VALUES (1,'Maestros','Maestro','Maestro','54654','dfsad');
+INSERT INTO `maestros` VALUES (1,'Maestros','Maestro','Maestro','54654','dfsad','1');
+INSERT INTO `maestros` VALUES (2,'Mario','Maestro','Maestro','12357','48956','2');
 
 # Ninos
 INSERT INTO `ninos` VALUES

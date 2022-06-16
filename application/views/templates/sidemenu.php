@@ -53,6 +53,9 @@
                             <li class="has_sub" id="calendario">
                                 <a href="<?= base_url('index.php/Calendario/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Calendario</span> </a>
                             </li>
+                            <li class="has_sub" id="calendariomaestros">
+                                <a href="<?= base_url('index.php/CalendarioMaestros/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Calendario Maestros</span> </a>
+                            </li>
                             <br>
                             <li class="text-muted menu-title" style="color:black;">Niveles</li>
                             <li class="has_sub" id="nivel1">
