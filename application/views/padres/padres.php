@@ -74,7 +74,8 @@
 
                                         <div class="form-group">
                                             <label for="nombre">Telefono</label>
-                                            <input class="form-control" type="text" required="" id="telefono" placeholder="Telefono">
+                                            <input class="form-control" type="text" required="" id="telefono" placeholder="Telefono"
+                                            onkeypress="if (event.keyCode < 48 || event.keyCode > 57)event.returnValue = false;>
                                         </div>
 
                                         <div class="form-group">

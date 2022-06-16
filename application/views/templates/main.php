@@ -84,8 +84,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         ?>
 
         <noscript>
-            <!--<meta http-equiv="Refresh" content="1; url=http://rehabilitacionneurologicaintegral/Admin/index.php/Session/SinJava" />-->
-            <meta http-equiv="Refresh" content="1; url=http://localhost:8080/RNI/index.php/Session/SinJava" />
+            <!--<meta http-equiv="Refresh" content="1; url=http ://rehabilitacionneurologicaintegral/Admin/index.php/Session/SinJava" />-->
+            <meta http-equiv="Refresh" content="1; url=http://localhost/ISW19/Proyecto-Natacion/index.php/Session/SinJava" />
         </noscript>
 
     </body>

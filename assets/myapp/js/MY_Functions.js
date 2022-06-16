@@ -681,6 +681,7 @@ function EditarMaestro($id){
             var password     = obj[0].password;
             var role         = obj[0].role;
             var estado       = obj[0].estado;
+            var nivel = obj[0].nivel;
             
             $('#username').attr('disabled',true);
             $('#password').attr('disabled',true);
@@ -699,6 +700,7 @@ function EditarMaestro($id){
             $('#password').val(password);
             $('#role').val(role);
             $('#estado').val(estado);
+            $('#nivel').val(nivel);
         },
         error:function() {
             swal("Error", "Ha ocurrido un error intentelo de nuevo","error");            

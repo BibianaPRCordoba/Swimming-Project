@@ -72,7 +72,8 @@
 
                                         <div class="form-group">
                                             <label for="nombre">Telefono de Emergencia</label>
-                                            <input class="form-control" type="text" required="" id="tel_emergencia" placeholder="Telefono de Emergencia">
+                                            <input class="form-control" type="text" required="" id="tel_emergencia" placeholder="Telefono de Emergencia"
+                                            onkeypress="if (event.keyCode < 48 || event.keyCode > 57)event.returnValue = false;">
                                         </div>
 
                                         <div class="form-group">

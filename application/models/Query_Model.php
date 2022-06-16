@@ -159,7 +159,7 @@ class Query_Model extends CI_Model{
 	}
 
 	function GetMaestroById($id){
-	    $query = $this->db->query("SELECT m.id_maestro, m.nombre, m.apaterno, m.amaterno, m.telefono, m.direccion, 
+	    $query = $this->db->query("SELECT m.id_maestro, m.nombre, m.apaterno, m.amaterno, m.telefono, m.direccion, m.nivel,
 	        u.email, u.username, u.password, u.role, u.estado
 	        FROM maestros AS m
 	        INNER JOIN usuarios AS u ON u.nombre = m.nombre AND u.apaterno = m.apaterno AND u.amaterno = m.amaterno
