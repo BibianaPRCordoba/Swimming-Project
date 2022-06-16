@@ -8,6 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Sistema de Administracion RNI">
         <meta name="author" content="Daniel Alexis Martinez Sosa">
+        <script src="https://kit.fontawesome.com/3d28f24987.js" crossorigin="anonymous"></script>
         
         <link rel="shortcut icon" href="<?php echo base_url('assets/myapp/img/.jpg'); ?>">
 

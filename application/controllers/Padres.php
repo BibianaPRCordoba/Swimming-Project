@@ -23,15 +23,15 @@ class Padres extends MY_Controller {
     }
 
     public function SavePadre(){        
-        $nombre = $this->input->post("nombre");
-        $apaterno = $this->input->post("apaterno");
-        $amaterno = $this->input->post("amaterno");
-        $telefono = $this->input->post("telefono");
+        $nombre    = $this->input->post("nombre");
+        $apaterno  = $this->input->post("apaterno");
+        $amaterno  = $this->input->post("amaterno");
+        $telefono  = $this->input->post("telefono");
         $direccion = $this->input->post("direccion");
-        $email = $this->input->post("email");
-        $username = $this->input->post("username");
-        $password = $this->input->post("password");
-        $nino = $this->input->post("nino");
+        $email     = $this->input->post("email");
+        $username  = $this->input->post("username");
+        $password  = $this->input->post("password");
+        $nino      = $this->input->post("nino");
     
         $datos_padre_tb_padres = array(
             'nombre' => $nombre,

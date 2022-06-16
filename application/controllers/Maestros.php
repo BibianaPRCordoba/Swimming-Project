@@ -16,20 +16,22 @@ class Maestros extends MY_Controller {
    }
 
     public function SaveMaestro(){        
-        $nombre = $this->input->post("nombre");
-        $apaterno = $this->input->post("apaterno");
-        $amaterno = $this->input->post("amaterno");
-        $telefono = $this->input->post("telefono");
+        $nombre    = $this->input->post("nombre");
+        $apaterno  = $this->input->post("apaterno");
+        $amaterno  = $this->input->post("amaterno");
+        $telefono  = $this->input->post("telefono");
         $direccion = $this->input->post("direccion");
-        $email = $this->input->post("email");
-        $username = $this->input->post("username");
-        $password = $this->input->post("password");
+        $email     = $this->input->post("email");
+        $username  = $this->input->post("username");
+        $password  = $this->input->post("password");
+        $nivel     = $this->input->post("nivel");
     
         $datos_maestro_tb_maestros = array(
-            'nombre' => $nombre,
-            'apaterno' => $apaterno,
-            'amaterno' => $amaterno,
-            'telefono' => $telefono,
+            'nombre'    => $nombre,
+            'apaterno'  => $apaterno,
+            'amaterno'  => $amaterno,
+            'telefono'  => $telefono,
+            'nivel'     => $nivel,
             'direccion' => $direccion
         );
 

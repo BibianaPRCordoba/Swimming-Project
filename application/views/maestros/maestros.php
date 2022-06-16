@@ -31,7 +31,7 @@
         <!-- Start - Wrapper -->
         <div id="wrapper">
             <!-- Start - Right Content here -->                   
-            <div class="content-page">
+            <!-- <div class="content-page"> -->
                 <!-- Start - Content -->
                 <div class="content">
                     <!-- Start - Container -->
@@ -39,6 +39,9 @@
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
+                                <br>
+                                <br>
+                                <br>
                             <h4 class="page-title">Registrar Maestros</h4>                               
                             </div>
                         </div>
@@ -100,6 +103,17 @@
                                                 <option value="0" >Inactivo</option>                             
                                             </select>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="nivel">Nivel</label>
+                                            <select id="nivel" name="nivel" class="form-control" style="">
+                                                <option value="" >Elije Nivel</option>                                                 
+                                                <option value="1" >1</option>
+                                                <option value="2" >2</option>
+                                                <option value="3" >3</option>
+                                            </select>
+                                        </div>   
+
                                     </div>
                                     <br>        
                                     <div align="center">

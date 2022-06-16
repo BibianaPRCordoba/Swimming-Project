@@ -103,7 +103,7 @@ CREATE TABLE `horarios` (
   `numero_anio` int(11) DEFAULT NULL,
   `estado` enum('1','0') DEFAULT '1',
 	`id_nino` INT NOT NULL,
-    FOREIGN KEY (`id_nino`) REFERENCES ninos(id_nino),
+    FOREIGN KEY (`id_nino`) REFERENCES ninos(id_nino) ON DELETE CASCADE,
   PRIMARY KEY (`id_horario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -161,6 +161,9 @@ INSERT INTO `padres` VALUES
 (0,'Ninguno',' ',' ',' ',' ',0),
 (1,'Pepes','Pepe','Pepe','123','p',1),
 (5,'ddd','ddd','ddd','ddd','ddd',1);
+
+# HORARIOS
+INSERT INTO `horarios` VALUES ('1', 'Hola', '9a-10a', 'Lunes', '...', '10', '2022-06-14', '2022', '1', '1');
 
 #######################################################################################################################
 

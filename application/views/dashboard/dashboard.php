@@ -45,7 +45,7 @@
             <!-- ============================================================== -->
             <!-- Start right Content here -->
             <!-- ============================================================== -->
-            <div class="content-page">
+            <!-- <div class="content-page"> -->
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
@@ -53,6 +53,9 @@
                         <section id="page-title">
                           <div class="row">
                             <div class="col-sm-12">
+                              <br>
+                              <br>
+                              <br>
                                 <h4 class="page-title">Inicio</h4>
                             </div>
                           </div>
@@ -196,8 +199,8 @@
                                     <div class="panel-heading">
                                       <h3 class="panel-title">Sobre nosotros</h3>
                                     </div>
-                                    <div class="panel-body">
-                                      Panel content
+                                    <div class="panel-body" style="background-color: #2698eb; color: white;">
+                                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec urna purus, gravida et semper quis, eleifend vel lectus. Donec mollis nisl non nibh elementum rutrum. Morbi arcu sapien, ullamcorper vel lacus ac, commodo tempus nisl. Suspendisse a ante sit amet libero aliquam molestie at quis velit. Pellentesque vitae posuere nisl. Cras ut mollis orci. Donec hendrerit tellus at lacinia ornare. Aliquam vulputate felis vel magna posuere interdum. Quisque varius ultrices libero id ornare. Donec aliquam massa interdum, tincidunt dolor non, luctus erat. Vivamus bibendum mauris eu condimentum porttitor. Phasellus sed tempor elit. Suspendisse finibus ex eget sapien pharetra, ac tempus sem mattis.
                                     </div>
                                   </div>
                                 </section>

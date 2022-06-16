@@ -1,4 +1,4 @@
-<!-- ========== Left Sidebar Start ========== -->
+========== Left Sidebar Start ========== -->
 
             <?php $rol = ($this->session->userdata('tipo_user'));
 
@@ -30,9 +30,9 @@
             </script>";
             ?>
         
-            <div class="left side-menu" id="master" >
+            <!-- <div class="left side-menu" id="master" >
                 <div class="sidebar-inner slimscrollleft">
-                    <!--- Divider -->
+                    
                     <div id="sidebar-menu" >
                         <ul id="todo">
                             <li class="text-muted menu-title" style="color:black;">Menu</li>
@@ -66,7 +66,7 @@
                             </li>
                             <li class="has_sub" id="nivel3">
                                 <a href="<?= base_url('index.php/Nivel3/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Nivel 3</span> </a>
-                            </li>
+                            </li> -->
 
                         </ul>
                         <div class="clearfix"></div>
@@ -74,4 +74,4 @@
                     <div class="clearfix"></div>
                 </div>
             </div>
-            <!-- Left Sidebar End -->
+            <!-- Left Sidebar End

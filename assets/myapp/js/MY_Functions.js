@@ -632,12 +632,13 @@ function GuardarMaestro(){
     var email       = $('#email').val();
     var username    = $('#username').val();
     var password    = $('#password').val();
+    var nivel          = $('#nivel').val();
 
-    if(nombre != "" && apaterno != "" && amaterno != "" && telefono != "" && direccion != "" && email != "" && username != "" && password != ""){
+    if(nombre != "" && apaterno != "" && amaterno != "" && telefono != "" && direccion != "" && email != "" && username != "" && password != "" && nivel != ""){
         $.ajax({
             url:     myBase_url+"index.php/Maestros/SaveMaestro",
             type:    'POST',
-            data:    {nombre:nombre,apaterno:apaterno,amaterno:amaterno,telefono:telefono,direccion:direccion,email:email,username:username,password:password},
+            data:    {nombre:nombre,apaterno:apaterno,amaterno:amaterno,telefono:telefono,direccion:direccion,email:email,username:username,password:password, nivel:nivel},
             async:   true,
             success: function(datos){
                 swal({

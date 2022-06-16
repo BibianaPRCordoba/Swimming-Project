@@ -19,7 +19,7 @@ class Session_Model extends CI_Model{
         //$array = array('username' => $user,'estado' => '1'); //Validamos que el usuario no tiene una sesion activa
         $this->db->where('username',$user);
         $this->db->where('estado','1');
-        $this->db->where("(role= 'Padre' OR role = 'Maestro' OR role = 'Nino')",NULL,FALSE);
+        $this->db->where("(role= 'Padre' OR role = 'Maestro' or role = 'Admin')",NULL,FALSE);
         $query = $this->db->get();
         return $query->result();
         
@@ -33,7 +33,7 @@ class Session_Model extends CI_Model{
         //$array = array('username' => $user, 'estado' => '1'); //Validamos que el usuario esta en nuestra base de datos y que se encuentra activo
         $this->db->where('username',$user);
         $this->db->where('estado','1');
-        $this->db->where("(role= 'Padre' OR role = 'Maestro' OR role = 'Nino')",NULL,FALSE);
+        $this->db->where("(role= 'Padre' OR role = 'Maestro' or role = 'Admin')",NULL,FALSE);
         $query = $this->db->get()->result();
 
         if( (count($query) > 0) ){
@@ -54,7 +54,7 @@ class Session_Model extends CI_Model{
         //$array = array('username' => $user, 'password' => $pass); //Validamos que el usuario esta en nuestra bd y su contraseña es correcta
         $this->db->where('username',$user);
         $this->db->where('password',$pass);
-        $this->db->where("(role= 'Padre' OR role = 'Maestro' OR role = 'Nino')",NULL,FALSE);
+        $this->db->where("(role= 'Padre' OR role = 'Maestro' or role = 'Admin')",NULL,FALSE);
         $query = $this->db->get()->result();
     
         if( ($query==true) ){

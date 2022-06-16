@@ -24,14 +24,16 @@
     <script>
         var resizefunc = [];
         $(document).ready(function() {
-
         });
+
+
     </script>
     <body class="fixed-left">
+        
         <!-- Start - Wrapper -->
         <div id="wrapper">
             <!-- Start - Right Content here -->                   
-            <div class="content-page">
+            <!-- <div class="content-page"> -->
                 <!-- Start - Content -->
                 <div class="content">
                     <!-- Start - Container -->
@@ -39,6 +41,9 @@
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
+                                <br>
+                                <br>
+                                <br>
                             <h4 class="page-title">Registrar Padres</h4>                               
                             </div>
                         </div>

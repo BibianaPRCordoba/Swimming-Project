@@ -46,13 +46,16 @@
     <!-- ============================================================== -->
     <!-- Start right Content here -->
     <!-- ============================================================== -->
-    <div class="content-page">
+    <!-- <div class="content-page"> -->
         <!-- Start content -->
       <div class="content">
         <div class="container">
           <!-- Page-Title -->
           <div class="row">
             <div class="col-sm-12">
+                <br>
+                <br>
+                <br>
               <h4 class="page-title">Nivel 3 (Grupo)</h4>
             </div>
           </div>

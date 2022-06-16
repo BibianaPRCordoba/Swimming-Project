@@ -11,25 +11,28 @@
 </script>
 
 <body class="fixed-left"  >
+    <?= $tipo_user = $this->session->userdata('tipo_user');?>
     {% comment %} <div class="bg-img-main"></div> {% endcomment %}
     <div id="wrapper"><!-- Begin page -->
         <div class="topbar"><!-- Top Bar Start -->
             <div class="topbar-left" ><!-- LOGO -->
                         <div class="text-center">
                             
-                            <a href="#" class="logo"><img src="<?php echo base_url('assets/myapp/img/.jpg'); ?>" alt="Logo" class="img-circle" height="65px"></a>
+                            <a href="<?= base_url('index.php/Dashboard/');?>" class="logo"><img src="<?php echo base_url('assets/myapp/img/logo.png'); ?>" alt="Logo" class="img-circle" height="65px"></a>
+
+
                             
                         </div>
                     </div>
           
                 
             <div class="navbar navbar-default" role="navigation"><!-- Button mobile view to collapse sidebar menu -->
-                <div class="container">
+                <div class="container bg-info">
                     <!--div class=""-->
                     <div class="pull-left"> <!-- Boton Minimizar Menu -->
-                        <button class="button-menu-mobile open-left">
+                       <!--  <button class="button-menu-mobile open-left">
                             <i class="ion-navicon"></i>
-                        </button>
+                        </button> -->
                         <span class="clearfix"></span>
                     </div>
                       <div class="topbar-left" ><!-- LOGO -->
@@ -38,30 +41,69 @@
                             <!--<a href="#" class="logo hidden-xs"><img src="<?php echo base_url('assets/myapp/img/icon.png'); ?>" alt="logo..." height="55px" width="150px"></a>-->
                             
                         </div>
+
+                        <a href="#" class="waves-effect"><b><i><?php print_r($this->session->userdata('name')); ?></i></b></a>
+                        </li>
+
                     </div>
 
                     <ul class="nav navbar-nav navbar-right pull-right">
                         <li class="hidden-xs hidden-sm hidden-md">
+
+
                         
                         </li>
-                        <li class="hidden-xs hidden-sm">
-                            <a href="#" class="waves-effect"><b><i><?php print_r($this->session->userdata('name')); ?></i></b></a>
-                        </li>
-                        <li class="hidden-xs">
-                            <a href="#" id="btn-fullscreen" class="waves-effect"><i class="icon-size-fullscreen"></i></a>
-                        </li>
+                        <li class="hidden-xs hidden-sm">                        
+                        
+                        <?php 
+                            if($tipo_user == 'Admin') { ?>
+                                <li class="has_sub  text-white" id="padres">
+                                    <a href="<?= base_url('index.php/Padres/');?>" class="waves-effect waves-light" style="color:black;">
+                                        <i class='fa-solid fa-person '></i>
+                                        <span> Padres</span> 
+                                    </a>
+                                </li>
+                                <li class="has_sub" id="alumnos">
+                                    <a href="<?= base_url('index.php/Alumnos/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa-solid fa-person-swimming "></i><span> Alumnos</span> </a>
+                                </li>
 
-                        <li id="campana">
+                                <li class="has_sub" id="maestros">
+                                    <a href="<?= base_url('index.php/Maestros/');?>" class="waves-effect waves-light" style="color:black;"><i class="fas fa-chalkboard-teacher "></i><span> Maestros</span> </a>
+                                </li>
+                         <?php } ?>
 
-                            <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light hidden-xs" data-toggle="dropdown" aria-expanded="true">
-                                <i class="icon-bell"></i> <span class="badge badge-xs badge-danger" id="not" ></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-lg" id="info">
-                                <li class="notifi-title"><span class="label label-default pull-right" id="not1"></span>Notificationes</li>
+                        
+
+                        <?php 
+                            if($tipo_user == 'Padre') { ?>
+                                <li class="has_sub" id="calendario">
+                                    <a href="<?= base_url('index.php/Calendario/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa-solid fa-calendar-days "></i><span> Calendario</span> </a>
+                                </li>
+                         <?php } ?>
+                        
+                         <?php 
+                             if($tipo_user == 'Maestro') { ?>
+                                 <li class="has_sub" id="calendario">
+                                     <a href="<?= base_url('index.php/CalendarioMaestros/');?>" class="waves-effect waves-light" style="color:black;"><i class='fa fa-calendar-o'></i><span> Calendario Maestros</span> </a>
+                                 </li>
+                          <?php } ?>
+
+                        
+
+                        <li class="dropdown" id="todo1">
+                            <a href="" class="dropdown-toggle profile waves-effect" data-toggle="dropdown" aria-expanded="true"> <i class='fas fa-grip-lines'></i><span>  <span> Niveles</span> </a>
+                                <ul class="dropdown-menu">
                                 
-                              
+                                <li ><a href="<?php echo base_url('index.php/Nivel1/'); ?>"><i class=" m-r-5"></i> Nivel 1</a></li>                           
+                            
+                                
+                                <li ><a href="<?php echo base_url('index.php/Nivel2/'); ?>"><i class=" m-r-5"></i> Nivel 2</a></li>                          
+
+                                                            
+                                <li ><a href="<?php echo base_url('index.php/Nivel3/'); ?>"><i class=" m-r-5"></i> Nivel 3</a></li>
                             </ul>
                         </li>
+
                         
                         <li class="dropdown" id="todo1">
                             <a href="" class="dropdown-toggle profile waves-effect" data-toggle="dropdown" aria-expanded="true"><img src="<?php echo base_url('assets/darktemplate/images/users/avatar.jpg'); ?>" alt="user-img" class="img-circle"> </a>
