@@ -17,6 +17,8 @@ class Calendario extends MY_Controller {
 	       //              );
         $this->loadpageintotemplate($data);
    	}
+    
+    
 
    	
 
