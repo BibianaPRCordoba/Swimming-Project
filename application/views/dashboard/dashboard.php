@@ -26,15 +26,11 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="<?= base_url();?>/assets/myapp/css/dashboard.css" media="screen" />
-
     </head>
 
     <script>
         var resizefunc = [];
-
         $(document).ready(function() {
-
-
         });
 
 
@@ -204,30 +200,20 @@
                                     </div>
                                   </div>
                                 </section>
-                                
-                                
-                                
-
                               </div>
                             </div>
                           </div>
                         </div>
                     </div> <!-- container -->
-                </div> <!-- content -->
-
+                <!-- </div> --> <!-- content -->
                 <footer class="footer">
                      <?= date('Y')?> &copy;
                 </footer>
-
             </div>
             <!-- ============================================================== -->
             <!-- End Right content here -->
             <!-- ============================================================== -->
-
-
-
         </div>
         <!-- END wrapper -->
-
     </body>
 </html>
