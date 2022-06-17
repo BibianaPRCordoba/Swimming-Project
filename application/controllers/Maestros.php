@@ -8,9 +8,9 @@ class Maestros extends MY_Controller {
     }
 
     public function index(){
-        $data['tabTitle'] = "Registro de Maestros";
+        $data['tabTitle']    = "Registro de Maestros";
         $data['pagecontent'] = "maestros/maestros";
-        $data['maestros'] = $this->Query_Model->DataMaestros();
+        $data['maestros']    = $this->Query_Model->DataMaestros();
         
         $this->loadpageintotemplate($data);       
    }
@@ -36,14 +36,14 @@ class Maestros extends MY_Controller {
         );
 
         $datos_maestro_tb_usuarios = array(
-            'nombre' => $nombre,
+            'nombre'   => $nombre,
             'apaterno' => $apaterno,
             'amaterno' => $amaterno,
-            'email' => $email,
+            'email'    => $email,
             'username' => $username,
             'password' => $password,
-            'role' => 'Maestro',
-            'estado' => '1'
+            'role'     => 'Maestro',
+            'estado'   => '1'
         );
     
         $this->Query_Model->InsertMaestroInTbMaestros($datos_maestro_tb_maestros);
@@ -53,22 +53,22 @@ class Maestros extends MY_Controller {
 
     public function UpdateMaestro(){
  
-        $id = $this->input->post('id');
-        $nombre = $this->input->post("nombre");
-        $apaterno = $this->input->post("apaterno");
-        $amaterno = $this->input->post("amaterno");
-        $telefono = $this->input->post("telefono");
+        $id        = $this->input->post('id');
+        $nombre    = $this->input->post("nombre");
+        $apaterno  = $this->input->post("apaterno");
+        $amaterno  = $this->input->post("amaterno");
+        $telefono  = $this->input->post("telefono");
         $direccion = $this->input->post("direccion");
-        $email = $this->input->post("email");
-        $username = $this->input->post("username");
-        $password = $this->input->post("password");
-        $estado = $this->input->post("estado");
+        $email     = $this->input->post("email");
+        $username  = $this->input->post("username");
+        $password  = $this->input->post("password");
+        $estado    = $this->input->post("estado");
     
         $datos_maestro_tb_maestros = array(
-            'nombre' => $nombre,
-            'apaterno' => $apaterno,
-            'amaterno' => $amaterno,
-            'telefono' => $telefono,
+            'nombre'    => $nombre,
+            'apaterno'  => $apaterno,
+            'amaterno'  => $amaterno,
+            'telefono'  => $telefono,
             'direccion' => $direccion
         );
 

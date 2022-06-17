@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Calendario extends MY_Controller {
-        
+
     public function __construct() {
         parent::__construct();
     }
@@ -12,16 +12,13 @@ class Calendario extends MY_Controller {
         $data['tabTitle'] = "Plantilla Base - calendario";
         $data['pagecontent'] = "calendario/calendario";
        	$data['calendarios'] = $this->Query_Model->GetPadreByUser($user);
-       	// $data['session']= array(
-	       //                  "id"=>$usuario_existe_email->email
-	       //              );
         $this->loadpageintotemplate($data);
    	}
-    
-    
 
-   	
 
-        
-  
+
+
+
+
+
 }

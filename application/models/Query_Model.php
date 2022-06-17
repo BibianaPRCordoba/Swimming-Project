@@ -1,6 +1,7 @@
 <?php
 
 class Query_Model extends CI_Model{
+
 /* =============================================================================================================================================================================================================================== */
 /* START - CONTROLLER: Padres */
 
@@ -87,11 +88,22 @@ class Query_Model extends CI_Model{
         return $query->result();
     }
 
+    function GetPadreByUser($user){
+        $query = $this->db->query("SELECT p.id_padre, p.nombre, p.apaterno, p.amaterno,
+            u.id_usuario, u.username, u.email,
+            n.nombre_nino, n.apaterno_nino, n.amaterno_nino, n.tel_emergencia, n.nivel, n.id_nino 
+            FROM padres AS p 
+            INNER JOIN ninos AS n ON p.id_padre = n.id_padre
+            INNER JOIN usuarios AS u ON p.id_padre = u.id_padre
+            WHERE u.username = '$user'"
+        );
+        return $query->result();
+    }
 /* END - CONTROLLER: Padres */
 /* =============================================================================================================================================================================================================================== */
 
 /* =============================================================================================================================================================================================================================== */
-    /* START - CONTROLLER: Alumnos */
+/* START - CONTROLLER: Alumnos */
 
     function InsertAlumnoInTbNinos($datos_alumno_ninos){
         $this->db->insert('ninos',$datos_alumno_ninos);
@@ -116,7 +128,6 @@ class Query_Model extends CI_Model{
         );
         return $query->result();
     }
-
 /* END - CONTROLLER: Alumnos */
 /* =============================================================================================================================================================================================================================== */
 
@@ -184,12 +195,22 @@ class Query_Model extends CI_Model{
 	    $query = $this->db->get();
 	    return $query->result();
 	}
-
+    function GetMaestroByUser($user){
+        $query = $this->db->query("SELECT m.id_maestro, m.nombre, m.apaterno, m.amaterno, m.nivel,
+            u.id_usuario, u.username, u.email
+            FROM maestros AS m 
+            INNER JOIN usuarios AS u ON m.id_maestro = u.id_maestro
+            WHERE u.username = '$user'"
+        );
+        return $query->result();
+    }
 /* END - CONTROLLER: Maestros */
 /* =============================================================================================================================================================================================================================== */
 
 /* =============================================================================================================================================================================================================================== */
-/* START - CONTROLLER: Nivel 1 */
+/* START - CONTROLLER: Niveles*/
+
+    # Nivel 1
 	function DataNivel1(){
 	    $this->db->select('*');
 	    $this->db->from('ninos');
@@ -197,53 +218,25 @@ class Query_Model extends CI_Model{
 	    $query = $this->db->get();
 	    return $query->result();
 	}
-/* END - CONTROLLER: Nivel 1 */
-/* =============================================================================================================================================================================================================================== */
 
-/* =============================================================================================================================================================================================================================== */
-/* START - CONTROLLER: Nivel 2 */
-	function DataNivel2(){
-	    $this->db->select('*');
-	    $this->db->from('ninos');
-	    $this->db->where('nivel','2');
-	    $query = $this->db->get();
-	    return $query->result();
-	}
-/* END - CONTROLLER: Nivel 2 */
-/* =============================================================================================================================================================================================================================== */
-/* =============================================================================================================================================================================================================================== */
-/* START - CONTROLLER: Nivel 3 */
-	function DataNivel3(){
-	    $this->db->select('*');
-	    $this->db->from('ninos');
-	    $this->db->where('nivel','3');
-	    $query = $this->db->get();
-	    return $query->result();
-	}
-/* END - CONTROLLER: Nivel 3 */
-/* =============================================================================================================================================================================================================================== */
-
-	function GetPadreByUser($user){
-        $query = $this->db->query("SELECT p.id_padre, p.nombre, p.apaterno, p.amaterno,
-			u.id_usuario, u.username, u.email,
-			n.nombre_nino, n.apaterno_nino, n.amaterno_nino, n.tel_emergencia, n.nivel, n.id_nino 
-			FROM padres AS p 
-			INNER JOIN ninos AS n ON p.id_padre = n.id_padre
-			INNER JOIN usuarios AS u ON p.id_padre = u.id_padre
-			WHERE u.username = '$user'"
-        );
+    # Nivel 2
+    function DataNivel2(){
+        $this->db->select('*');
+        $this->db->from('ninos');
+        $this->db->where('nivel','2');
+        $query = $this->db->get();
         return $query->result();
     }
 
-    function GetMaestroByUser($user){
-        $query = $this->db->query("SELECT m.id_maestro, m.nombre, m.apaterno, m.amaterno, m.nivel,
-			u.id_usuario, u.username, u.email
-			FROM maestros AS m 
-			INNER JOIN usuarios AS u ON m.id_maestro = u.id_maestro
-			WHERE u.username = '$user'"
-        );
+    # Nivel 3
+    function DataNivel3(){
+        $this->db->select('*');
+        $this->db->from('ninos');
+        $this->db->where('nivel','3');
+        $query = $this->db->get();
         return $query->result();
     }
-
+/* END - CONTROLLER: Niveles */
+/* =============================================================================================================================================================================================================================== */
 
 }
