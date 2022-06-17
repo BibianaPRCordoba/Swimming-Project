@@ -75,7 +75,7 @@
                                         <div class="form-group">
                                             <label for="nombre">Telefono</label>
                                             <input class="form-control" type="text" required="" id="telefono" placeholder="Telefono"
-                                            onkeypress="if (event.keyCode < 48 || event.keyCode > 57)event.returnValue = false;>
+                                            onkeypress="if (event.keyCode < 48 || event.keyCode > 57)event.returnValue = false;">
                                         </div>
 
                                         <div class="form-group">
@@ -160,30 +160,34 @@
                                             <tbody>
                                                 <?php
                                                     $valores = count($padres);
-                                                    for ($i=0; $i < $valores ; $i++) { 
-                                                        $res = $padres[$i];
-                                                        $id = $res -> id_padre;
-                                                        $nombre = $res -> nombre;
-                                                        $apaterno= $res -> apaterno;
-                                                        $amaterno = $res -> amaterno;
-                                                        $telefono = $res -> telefono;
+                                                    for ($i=0; $i < $valores ; $i++) {                                                        
+                                                            $res = $padres[$i];
+                                                        if($res -> nombre == "Ninguno") {
+                                                            
+                                                        } else {
+                                                            $id = $res -> id_padre;
+                                                            $nombre = $res -> nombre;
+                                                            $apaterno= $res -> apaterno;
+                                                            $amaterno = $res -> amaterno;
+                                                            $telefono = $res -> telefono;
 
-                                                        $nombre_completo = $nombre . ' ' .$apaterno. ' ' .$amaterno;
+                                                            $nombre_completo = $nombre . ' ' .$apaterno. ' ' .$amaterno;
 
-                                                        echo "
-                                                        <tr>
-                                                        <td>$nombre_completo</td>
-                                                        <td>$telefono</td>
-                                                        ";
+                                                            echo "
+                                                            <tr>
+                                                            <td>$nombre_completo</td>
+                                                            <td>$telefono</td>
+                                                            ";
 
-                                                        echo "<td>";
-                                                        echo "<a href='#' id='Editar' onclick='EditarPadre($id)'><i class='fa fa-pencil'></i> </a>
-                                                        </td>";
-                                                        echo "<td>";
-                                                        echo "<a href='#' id='Borrar' onclick='BorrarPadre($id)'><i class='fa fa-close'></i> </a>
-                                                        </td>";
-                                                        
-                                                        echo "</tr>";
+                                                            echo "<td>";
+                                                            echo "<a href='#' id='Editar' onclick='EditarPadre($id)'><i class='fa fa-pencil'></i> </a>
+                                                            </td>";
+                                                            echo "<td>";
+                                                            echo "<a href='#' id='Borrar' onclick='BorrarPadre($id)'><i class='fa fa-close'></i> </a>
+                                                            </td>";
+                                                            
+                                                            echo "</tr>";
+                                                        }
                                                     }
                                                 ?>
                                             </tbody>

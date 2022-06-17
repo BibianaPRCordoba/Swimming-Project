@@ -13,6 +13,7 @@ class Session extends CI_Controller {
     
     public function index(){
         $data['tabTitle'] = "Inicio de Sesión";
+
         $this->load->view('templates/login',$data);
   
     }

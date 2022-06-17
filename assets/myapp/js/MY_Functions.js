@@ -177,12 +177,14 @@
         });
 
     }
+
 /* END - CONTROLLER: Session */
 /* =============================================================================================================================================================================================================================== */
 
 /* =============================================================================================================================================================================================================================== */
 /* START - CONTROLLER: Padres */
 
+    /* Funcion para corroborar si el usuario ya esxiste en la base de datos */
     function VerificaUser(){
         var usuario = $('#username').val();
 
@@ -402,6 +404,7 @@
             });
         }
     }
+
 /* END - CONTROLLER: Padres */
 /* =============================================================================================================================================================================================================================== */
 
@@ -614,164 +617,122 @@
             });
         }
     }
+
 /* END - CONTROLLER: Alumnos */
 /* =============================================================================================================================================================================================================================== */
 
 /* =============================================================================================================================================================================================================================== */
-/* START - CONTROLLER: Maestros */
+/* START - CONTROLLER: Padres */
 
-    function GuardarMaestro(){
-        var nombre      = $('#nombre').val();
-        var apaterno    = $('#apaterno').val();
-        var amaterno    = $('#amaterno').val();
-        var telefono    = $('#telefono').val();
-        var direccion   = $('#direccion').val();
-        var email       = $('#email').val();
-        var username    = $('#username').val();
-        var password    = $('#password').val();
-        var nivel          = $('#nivel').val();
+function GuardarMaestro(){
+    var nombre      = $('#nombre').val();
+    var apaterno    = $('#apaterno').val();
+    var amaterno    = $('#amaterno').val();
+    var telefono    = $('#telefono').val();
+    var direccion   = $('#direccion').val();
+    var email       = $('#email').val();
+    var username    = $('#username').val();
+    var password    = $('#password').val();
+    var nivel          = $('#nivel').val();
 
-        if(nombre != "" && apaterno != "" && amaterno != "" && telefono != "" && direccion != "" && email != "" && username != "" && password != "" && nivel != ""){
+    if(nombre != "" && apaterno != "" && amaterno != "" && telefono != "" && direccion != "" && email != "" && username != "" && password != "" && nivel != ""){
+        $.ajax({
+            url:     myBase_url+"index.php/Maestros/SaveMaestro",
+            type:    'POST',
+            data:    {nombre:nombre,apaterno:apaterno,amaterno:amaterno,telefono:telefono,direccion:direccion,email:email,username:username,password:password, nivel:nivel},
+            async:   true,
+            success: function(datos){
+                swal({
+                    title:              "Exito",
+                    text:               "Se ha guardado el maestro con exito",
+                    type:               "success",
+                    showCancelButton:   false,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText:  "OK",
+                    cancelButtonText:   "No, Cancelar",
+                    closeOnConfirm:     true,
+                    closeOnCancel:      false
+                }, function(isConfirm){
+                    location.href = "";
+                });
+            },
+        });
+    }else{
+        swal("Cuidado","Aun existen campos vacios","warning");
+    }
+}
+
+function EditarMaestro($id){
+    var id = $id;
+    $.ajax({
+        url:    myBase_url+"index.php/Maestros/MaestroPorId",
+        type:   'POST',
+        data:   {id:id},
+        async:  true,
+        success:function(datos){
+            var obj          = JSON.parse(datos);
+            var id           = obj[0].id_maestro;
+            var nombre       = obj[0].nombre;
+            var apaterno     = obj[0].apaterno;
+            var amaterno     = obj[0].amaterno;
+            var telefono     = obj[0].telefono;
+            var direccion    = obj[0].direccion;
+            var email        = obj[0].email;
+            var usuario      = obj[0].username;
+            var password     = obj[0].password;
+            var role         = obj[0].role;
+            var estado       = obj[0].estado;
+            var nivel = obj[0].nivel;
+            
+            $('#username').attr('disabled',true);
+            $('#password').attr('disabled',true);
+            $('#btn-guardar').hide();
+            $('#btn-update').show();
+            $('#div-estado').show();
+
+            $('#id_user').val(id);
+            $('#nombre').val(nombre);
+            $('#apaterno').val(apaterno);
+            $('#amaterno').val(amaterno);
+            $('#telefono').val(telefono);
+            $('#direccion').val(direccion);
+            $('#email').val(email);
+            $('#username').val(usuario);
+            $('#password').val(password);
+            $('#role').val(role);
+            $('#estado').val(estado);
+            $('#nivel').val(nivel);
+        },
+        error:function() {
+            swal("Error", "Ha ocurrido un error intentelo de nuevo","error");            
+        }
+    });
+}
+
+function BorrarMaestro($id){
+    var id = $id;
+    swal({
+        title:              "ADVERTENCIA",
+        text:               "¿Está seguro que desea eliminar el registro?",
+        type:               "warning",
+        showCancelButton:   true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText:  "Aceptar",
+        cancelButtonText:   "Cancelar",
+        closeOnConfirm:     false,
+        closeOnCancel:      true
+    },function(isConfirm){
+        if(isConfirm){
+            var id = $id;
             $.ajax({
-                url:     myBase_url+"index.php/Maestros/SaveMaestro",
+                url:     myBase_url+"index.php/Maestros/DeleteMaestro",
                 type:    'POST',
-                data:    {nombre:nombre,apaterno:apaterno,amaterno:amaterno,telefono:telefono,direccion:direccion,email:email,username:username,password:password, nivel:nivel},
+                data:    {id:id},
                 async:   true,
                 success: function(datos){
                     swal({
                         title:              "Exito",
-                        text:               "Se ha guardado el maestro con exito",
-                        type:               "success",
-                        showCancelButton:   false,
-                        confirmButtonColor: "#DD6B55",
-                        confirmButtonText:  "OK",
-                        cancelButtonText:   "No, Cancelar",
-                        closeOnConfirm:     true,
-                        closeOnCancel:      false
-                    }, function(isConfirm){
-                        location.href = "";
-                    });
-                },
-            });
-        }else{
-            swal("Cuidado","Aun existen campos vacios","warning");
-        }
-    }
-
-    function EditarMaestro($id){
-        var id = $id;
-        $.ajax({
-            url:    myBase_url+"index.php/Maestros/MaestroPorId",
-            type:   'POST',
-            data:   {id:id},
-            async:  true,
-            success:function(datos){
-                var obj          = JSON.parse(datos);
-                var id           = obj[0].id_maestro;
-                var nombre       = obj[0].nombre;
-                var apaterno     = obj[0].apaterno;
-                var amaterno     = obj[0].amaterno;
-                var telefono     = obj[0].telefono;
-                var direccion    = obj[0].direccion;
-                var email        = obj[0].email;
-                var usuario      = obj[0].username;
-                var password     = obj[0].password;
-                var role         = obj[0].role;
-                var estado       = obj[0].estado;
-                var nivel = obj[0].nivel;
-                
-                $('#username').attr('disabled',true);
-                $('#password').attr('disabled',true);
-                $('#btn-guardar').hide();
-                $('#btn-update').show();
-                $('#div-estado').show();
-
-                $('#id_user').val(id);
-                $('#nombre').val(nombre);
-                $('#apaterno').val(apaterno);
-                $('#amaterno').val(amaterno);
-                $('#telefono').val(telefono);
-                $('#direccion').val(direccion);
-                $('#email').val(email);
-                $('#username').val(usuario);
-                $('#password').val(password);
-                $('#role').val(role);
-                $('#estado').val(estado);
-                $('#nivel').val(nivel);
-            },
-            error:function() {
-                swal("Error", "Ha ocurrido un error intentelo de nuevo","error");            
-            }
-        });
-    }
-
-    function BorrarMaestro($id){
-        var id = $id;
-        swal({
-            title:              "ADVERTENCIA",
-            text:               "¿Está seguro que desea eliminar el registro?",
-            type:               "warning",
-            showCancelButton:   true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText:  "Aceptar",
-            cancelButtonText:   "Cancelar",
-            closeOnConfirm:     false,
-            closeOnCancel:      true
-        },function(isConfirm){
-            if(isConfirm){
-                var id = $id;
-                $.ajax({
-                    url:     myBase_url+"index.php/Maestros/DeleteMaestro",
-                    type:    'POST',
-                    data:    {id:id},
-                    async:   true,
-                    success: function(datos){
-                        swal({
-                            title:              "Exito",
-                            text:               "Se ha borrado el maestro con exito",
-                            type:               "success",
-                            showCancelButton:   false,
-                            confirmButtonColor: "#DD6B55",
-                            confirmButtonText:  "OK",
-                            cancelButtonText:   "No, Cancelar",
-                            closeOnConfirm:     true,
-                            closeOnCancel:      false
-                        }, function(isConfirm){
-                            location.href = "";
-                        });
-                    },
-                    error:function() {
-                        swal("Error", "Ha ocurrido un error intentelo de nuevo","error");
-                        
-                    }
-                });
-            }
-        });
-    }
-
-    function ActualizarMaestro(){
-        var id          = $('#id_user').val();
-        var nombre      = $('#nombre').val();
-        var apaterno    = $('#apaterno').val();
-        var amaterno    = $('#amaterno').val();
-        var telefono    = $('#telefono').val();
-        var direccion   = $('#direccion').val();
-        var email       = $('#email').val();
-        var username    = $('#username').val();
-        var password    = $('#password').val();
-        var role        = $('#role').val();
-        var estado      = $('#estado').val();
-
-        if(id != "" && nombre != "" && apaterno != "" && amaterno != "" && telefono != "" && direccion != "" && email != "" && username != "" && password != "" && role != "" && estado != ""){
-            $.ajax({
-                url:    myBase_url+"index.php/Maestros/UpdateMaestro",
-                type:   'POST',
-                data:   {id:id,nombre:nombre,apaterno:apaterno,amaterno:amaterno,telefono:telefono,direccion:direccion,email:email,username:username,password:password,role:role,estado:estado},
-                async:  true,
-                success:function(datos){
-                    swal({
-                        title:              "Exito",
-                        text:               "Se ha actualizado el maestro con exito",
+                        text:               "Se ha borrado el maestro con exito",
                         type:               "success",
                         showCancelButton:   false,
                         confirmButtonColor: "#DD6B55",
@@ -785,9 +746,53 @@
                 },
                 error:function() {
                     swal("Error", "Ha ocurrido un error intentelo de nuevo","error");
-                },
+                    
+                }
             });
         }
+    });
+}
+
+function ActualizarMaestro(){
+    var id          = $('#id_user').val();
+    var nombre      = $('#nombre').val();
+    var apaterno    = $('#apaterno').val();
+    var amaterno    = $('#amaterno').val();
+    var telefono    = $('#telefono').val();
+    var direccion   = $('#direccion').val();
+    var email       = $('#email').val();
+    var username    = $('#username').val();
+    var password    = $('#password').val();
+    var role        = $('#role').val();
+    var estado      = $('#estado').val();
+
+    if(id != "" && nombre != "" && apaterno != "" && amaterno != "" && telefono != "" && direccion != "" && email != "" && username != "" && password != "" && role != "" && estado != ""){
+        $.ajax({
+            url:    myBase_url+"index.php/Maestros/UpdateMaestro",
+            type:   'POST',
+            data:   {id:id,nombre:nombre,apaterno:apaterno,amaterno:amaterno,telefono:telefono,direccion:direccion,email:email,username:username,password:password,role:role,estado:estado},
+            async:  true,
+            success:function(datos){
+                swal({
+                    title:              "Exito",
+                    text:               "Se ha actualizado el maestro con exito",
+                    type:               "success",
+                    showCancelButton:   false,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText:  "OK",
+                    cancelButtonText:   "No, Cancelar",
+                    closeOnConfirm:     true,
+                    closeOnCancel:      false
+                }, function(isConfirm){
+                    location.href = "";
+                });
+            },
+            error:function() {
+                swal("Error", "Ha ocurrido un error intentelo de nuevo","error");
+            },
+        });
     }
-/* END - CONTROLLER: Maestros */
+}
+
+/* END - CONTROLLER: Padres */
 /* =============================================================================================================================================================================================================================== */

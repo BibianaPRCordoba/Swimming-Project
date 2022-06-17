@@ -1,7 +1,5 @@
-#CREATE DATABASE proyecto_natacion;
+# CREATE DATABASE proyecto_natacion;
 USE proyecto_natacion;
-
-#horarios
 
 #######################################################################################################################
 
@@ -142,33 +140,19 @@ SELECT * FROM padres;
 
 # USUARIOS
 INSERT INTO `usuarios` VALUES
-(2,1,0,'Pepes','Pepe','Pepe','pepe@gmail.com','pepe','1234','Padre',1),
-(3,0,0,'Ninguno',' ',' ',' ','','','',0),
-(4,0,1,'Maestros','Maestro','Maestro','maestro@gmail.com','Maestro','1234','Maestro',1),
-(7,5,0,'ddd','ddd','ddd','ddd','dd','dd','Padre',1);
-
-# MAESTROS
-INSERT INTO `maestros` VALUES (1,'Maestros','Maestro','Maestro','54654','dfsad','1');
-INSERT INTO `maestros` VALUES (2,'Mario','Maestro','Maestro','12357','48956','2');
-
-# Ninos
-INSERT INTO `ninos` VALUES
-(0,'Ninguno',' ',' ',' ',0,'Nino','1',0),
-(1,'p','p','p','32324',1,'Nino','1',1);
-
-# PADRES
-INSERT INTO `padres` VALUES
-(0,'Ninguno',' ',' ',' ',' ',0),
-(1,'Pepes','Pepe','Pepe','123','p',1),
-(5,'ddd','ddd','ddd','ddd','ddd',1);
+(0,0,0,'Ninguno',' ',' ',' ','','','',0),
+(1,0,0,'Admin','','','','admin','1234','Admin',1);
 
 # HORARIOS
-INSERT INTO `horarios` VALUES ('1', 'Hola', '9a-10a', 'Lunes', '...', '10', '2022-06-14', '2022', '1', '1');
+INSERT INTO `horarios` VALUES ('1', 'test', '9a-10a', 'Lunes', '...', '10', '2022-06-14', '2022', '1', '1');
 
-#######################################################################################################################
+# Padres
+INSERT INTO `padres` VALUES ();
 
+# Ninos
+INSERT INTO `ninos` VALUES ();
 
-#######################################################################################################################
-
+# Maestros
+INSERT INTO `maestros` VALUES ();
 
 #######################################################################################################################

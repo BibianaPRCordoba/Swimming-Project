@@ -151,30 +151,34 @@
                                                     $valores = count($ninos);
                                                     for ($i=0; $i < $valores ; $i++) { 
                                                         $res = $ninos[$i];
-                                                        $id = $res -> id_nino;
-                                                        $nombre = $res -> nombre_nino;
-                                                        $apaterno= $res -> apaterno_nino;
-                                                        $amaterno = $res -> amaterno_nino;
-                                                        $telefono = $res -> tel_emergencia;
-                                                        $nivel = $res -> nivel;
+                                                        if($res -> nombre_nino == "Ninguno") {
+                                                            
+                                                        } else {
+                                                            $id = $res -> id_nino;
+                                                            $nombre = $res -> nombre_nino;
+                                                            $apaterno= $res -> apaterno_nino;
+                                                            $amaterno = $res -> amaterno_nino;
+                                                            $telefono = $res -> tel_emergencia;
+                                                            $nivel = $res -> nivel;
 
-                                                        $nombre_completo = $nombre . ' ' .$apaterno. ' ' .$amaterno;
+                                                            $nombre_completo = $nombre . ' ' .$apaterno. ' ' .$amaterno;
 
-                                                        echo "
-                                                        <tr>
-                                                        <td>$nombre_completo</td>
-                                                        <td>$telefono</td>
-                                                        <td>$nivel</td>
-                                                        ";
+                                                            echo "
+                                                            <tr>
+                                                            <td>$nombre_completo</td>
+                                                            <td>$telefono</td>
+                                                            <td>$nivel</td>
+                                                            ";
 
-                                                        echo "<td>";
-                                                        echo "<a href='#' id='Editar' onclick='EditarAlumno($id)'><i class='fa fa-pencil'></i> </a>
-                                                        </td>";
-                                                        echo "<td>";
-                                                        echo "<a href='#' id='Borrar' onclick='BorrarAlumno($id)'><i class='fa fa-close'></i> </a>
-                                                        </td>";
-                                                        
-                                                        echo "</tr>";
+                                                            echo "<td>";
+                                                            echo "<a href='#' id='Editar' onclick='EditarAlumno($id)'><i class='fa fa-pencil'></i> </a>
+                                                            </td>";
+                                                            echo "<td>";
+                                                            echo "<a href='#' id='Borrar' onclick='BorrarAlumno($id)'><i class='fa fa-close'></i> </a>
+                                                            </td>";
+                                                            
+                                                            echo "</tr>";
+                                                        }
                                                     }
                                                 ?>
                                             </tbody>
