@@ -1,3 +1,24 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -94,7 +115,7 @@ class Session extends CI_Controller {
             $url = $this->session->userdata('redirect');
             $this->session->unset_userdata('redirect');
         } else{
-            $url = "Dashboard"; //Choose the default controller to access after the validation of the user and password
+            $url = "Padres"; //Choose the default controller to access after the validation of the user and password
         }
         return $url;
     }
